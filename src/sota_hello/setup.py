@@ -25,8 +25,8 @@ setup(
     tests_require=["pytest"],
     entry_points={
         "console_scripts": [
-            "talker = sota_hello.sota_publisher:main",
-            "listener = sota_hello.sota_subscriber:main",
+            "talker = sota_hello.sota_speechpub:main",
+            "listener = sota_hello.sota_speechsub:main",
             "service = sota_hello.sota_service:main",
             "client = sota_hello.sota_client:main",
         ],
