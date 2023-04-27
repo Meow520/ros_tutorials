@@ -1,10 +1,13 @@
 """imports"""
 import rclpy
+import os
 from rclpy.node import Node
 
 from std_msgs.msg import String
+from dotenv import load_dotenv
+from .robot_modules.robottools import RobotTools
 
-from robottools import RobotTools
+load_dotenv()
 
 
 class SotaSubscriber(Node):
@@ -27,7 +30,9 @@ class SotaSubscriber(Node):
 def main(args=None):
     """main function"""
     rclpy.init(args=args)
-    sota_subscriber = SotaSubscriber(ip="", port=22222)
+    sota_subscriber = SotaSubscriber(
+        ip=os.environ.get("ROBOT_IP"), port=int(os.environ.get("ROBOT_PORT"))
+    )
     rclpy.spin(sota_subscriber)
     sota_subscriber.destroy_node()
     rclpy.shutdown()

@@ -15,8 +15,9 @@ class SotaPublisher(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
+        """timer callback function"""
         publish_msg = String()
-        publish_msg.data = input()
+        publish_msg.data = input("Say something:")
         self.publisher_.publish(publish_msg)
 
     def publish(self, text: str):
