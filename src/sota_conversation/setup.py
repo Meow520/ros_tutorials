@@ -2,12 +2,12 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = "sota_hello"
-submodules = "sota_hello/robot_modules"
+package_name = "sota_conversation"
+submodules = "sota_conversation/robot_modules"
 
 setup(
     name=package_name,
-    version="0.0.0",
+    version='0.0.0',
     packages=[package_name, submodules],
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
@@ -26,10 +26,10 @@ setup(
     tests_require=["pytest"],
     entry_points={
         "console_scripts": [
-            "talker = sota_hello.sota_speechpub:main",
-            "listener = sota_hello.sota_speechsub:main",
-            "service = sota_hello.sota_service:main",
-            "client = sota_hello.sota_client:main",
+            "talker = sota_conversation.sota_speechpub:main",
+            "listener = sota_conversation.sota_speechsub:main",
+            "service = sota_conversation.sota_service:main",
+            "client = sota_conversation.sota_client:main",
         ],
     },
 )

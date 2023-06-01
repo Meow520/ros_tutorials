@@ -17,7 +17,7 @@ class SotaSubscriber(Node):
         super().__init__("sota_subscriber")
         self.robot_tools = RobotTools(ip, port)
         self.subscription = self.create_subscription(
-            String, "speech", self.listener_callback, 10
+            String, "conversation", self.listener_callback, 10
         )
         self.subscription  # prevent unused variable warning
 
