@@ -24,7 +24,9 @@ class SotaSubscriber(Node):
     def listener_callback(self, msg):
         """callback function"""
         self.get_logger().info(f"I heard: {msg.data}")
-        self.robot_tools.say_text(msg.data)
+        duration = self.robot_tools.say_text(msg.data)
+        servo_list = self.robot_tools.make_beat_motion(duration)
+        self.robot_tools.play_motion(servo_list)
 
 
 def main(args=None):

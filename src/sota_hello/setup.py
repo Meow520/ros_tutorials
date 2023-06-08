@@ -1,6 +1,6 @@
 import os
 from glob import glob
-from setuptools import find_packages, setup
+from setuptools import setup
 
 package_name = "sota_hello"
 submodules = "sota_hello/robot_modules"
