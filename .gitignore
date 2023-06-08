@@ -1,7 +1,0 @@
-/build
-/install
-/log
-
-.env
-sample_asr.py
-sample_ff.py
