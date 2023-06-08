@@ -74,12 +74,14 @@ class RobotTools(object):
             self.__send(conn, "stop_wav".encode("utf-8"))
 
     def say_text(
-        self, text: str, lang="ja", output_file_name="temp", slow=False
+        self, text: str, lang="en", tld="co.uk", output_file_name="temp", slow=False
     ) -> float:
         """Returns speech duration in seconds"""
 
         def make_wav() -> float:
-            gtts.gTTS(text=text, lang=lang, slow=slow).save(f"{output_file_name}.mp3")
+            gtts.gTTS(text=text, lang=lang, slow=slow, tld=tld).save(
+                f"{output_file_name}.mp3"
+            )
             sound = pydub.AudioSegment.from_mp3(f"{output_file_name}.mp3")
             sound.export(f"{output_file_name}.wav", format="wav")
             return sound.duration_seconds
