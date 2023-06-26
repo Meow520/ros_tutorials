@@ -5,6 +5,7 @@
 .env
 sample_asr.py
 sample_ff.py
+asr_deep.py
 
 temp.wav
 temp.mp3
